@@ -1,4 +1,5 @@
 import { Box, Content, Flex, Title } from "@/styles/components";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ProjectBox } from "./ProjectBox";
 
@@ -26,7 +27,13 @@ export function MyProjects() {
       <Content>
         <Title>
           <h5>Meus últimos projetos</h5>
-          <a> Veja todos </a>
+
+          <Link href="https://github.com/Santosl2">
+            <a target={"_blank"} rel={"noopener"}>
+              {" "}
+              Veja todos{" "}
+            </a>
+          </Link>
         </Title>
         <Flex>
           {myProjects?.map(el => {
