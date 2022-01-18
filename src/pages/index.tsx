@@ -55,7 +55,7 @@ export default function Home({ posts }) {
           </RightContent>
         </AboutMe>
       </Container>
-      <Box>
+      <Box withBg>
         <Content>
           <Title>
             <h5>Postagens recentes</h5>

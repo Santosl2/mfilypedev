@@ -1,4 +1,13 @@
+import { CSSProperties } from "react";
 import styled from "styled-components";
+
+interface IFlexProps {
+  flexDir?: "row" | "row-reverse" | "column" | "column-reverse";
+}
+
+interface IProps {
+  withBg?: boolean;
+}
 
 export const Container = styled.main`
   max-width: var(--layout-size);
@@ -10,19 +19,19 @@ export const Container = styled.main`
   }
 `;
 
-export const Box = styled.section`
+export const Box = styled.section<IProps>`
   max-width: 100%;
-  background: var(--blue-500);
+  background: ${props => (props.withBg ? "var(--blue-500)" : "")};
   min-height: 17em;
   padding: 1rem;
 `;
 
-export const Flex = styled.div`
+export const Flex = styled.div<IFlexProps>`
   display: flex;
   flex-direction: column;
 
   @media screen and (min-width: 768px) {
-    flex-direction: row;
+    flex-direction: ${props => (props.flexDir ? props.flexDir : "row")};
   }
 `;
 
