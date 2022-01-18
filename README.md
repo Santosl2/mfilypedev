@@ -1,6 +1,3 @@
-# Automatic Thumbnail Get
+# mfilype.dev
 
-
-Feito usando NextJS e puppeteer.
-
-
+Um projeto pessoal meu de um Blog, utilizando React (Next JS) juntamente com Styled-components
