@@ -1,0 +1,76 @@
+#postWrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+
+  .postBox {
+    border: 1px solid #181d2a;
+    border-radius: 5px;
+    height: 370px;
+    max-width: 98%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+    margin-top: 1rem;
+
+    .postBoxContent {
+      padding: 40px 55px;
+      max-width: 50%;
+      color: var(--blue-600);
+
+      p {
+        font-weight: 400;
+      }
+
+      .postBoxContentFooter {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        a {
+          color: var(--blue-800);
+          font-weight: 700;
+          cursor: pointer;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        small {
+          font-size: 14px;
+        }
+      }
+
+      h4 {
+        font-size: 32px;
+        color: var(--blue-800);
+        font-weight: 700;
+      }
+    }
+
+    .postImage {
+      width: 50%;
+      height: 100%;
+      background: url("/images/background2.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      transition: all 0.3s ease;
+      box-shadow: none;
+
+      &:hover {
+        box-shadow: inset 0 0 0 100vw #2d3748d8;
+      }
+    }
+  }
+}
+
+#postLayout {
+  max-width: 1440px;
+  height: 100vh;
+  margin: 0 auto;
+  color: white;
+  padding: 1rem;
+  border: 1px solid #181d2a;
+}
