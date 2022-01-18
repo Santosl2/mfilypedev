@@ -7,6 +7,7 @@ interface IParams {
   description: string;
   background: string;
   slug: string;
+  createdAt: string;
 }
 
 export function PostList({
@@ -14,12 +15,13 @@ export function PostList({
   description,
   background = "background.jpg",
   slug,
+  createdAt,
 }: IParams) {
   return (
     <Post>
       <PostContent>
         <PostInfo>
-          <span>12 de Fevereiro</span>
+          <span>{new Date().toLocaleDateString("pt-BR")}</span>
           <span>React, Next</span>
         </PostInfo>
         <h6>{title}</h6>

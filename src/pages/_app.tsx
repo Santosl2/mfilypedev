@@ -6,7 +6,9 @@ function MyApp({ Component, pageProps }) {
     <>
       <Global />
       <Header />
-      <Component {...pageProps} />
+      <main>
+        <Component {...pageProps} />
+      </main>
     </>
   );
 }
