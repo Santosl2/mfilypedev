@@ -8,7 +8,7 @@ export default createGlobalStyle`
     --gray-200: #0000009c;
     --gray-500: rgb(46, 46, 46);
     --gray-400: rgb(94, 94, 94);
-    --blue-500:#EDF7FA
+    --blue-500: #EDF7FA
   }
   html,
   body {
