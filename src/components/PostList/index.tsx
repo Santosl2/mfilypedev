@@ -18,16 +18,18 @@ export function PostList({
   createdAt,
 }: IParams) {
   return (
-    <Post>
-      <PostContent>
-        <PostInfo>
-          <span>{new Date().toLocaleDateString("pt-BR")}</span>
-          <span>React, Next</span>
-        </PostInfo>
-        <h6>{title}</h6>
+    <Link href={slug}>
+      <Post>
+        <PostContent>
+          <PostInfo>
+            <span>{new Date().toLocaleDateString("pt-BR")}</span>
+            <span>React, Next</span>
+          </PostInfo>
+          <h6>{title}</h6>
 
-        <PostDescription>{description}</PostDescription>
-      </PostContent>
-    </Post>
+          <PostDescription>{description}</PostDescription>
+        </PostContent>
+      </Post>
+    </Link>
   );
 }
