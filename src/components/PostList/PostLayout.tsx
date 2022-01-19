@@ -18,24 +18,28 @@ export default function PostLayout(props: PostLayoutProps) {
   const [fastNavigation, setFastNavigation] = useState<IFastNavigation[]>([]);
 
   useEffect(() => {
-    const findNavigation = props.content;
-    const pattern = /(<h[1-6]) (id="[a-z]{0,}")(>)[a-z]{0,}(<\/h[1-6]>)/gim; // pick all h`s
-    const patternT = /(["][(a-z)]{0,}["])>([a-z]{0,})/gim;
+    const findNavigation = props?.content;
 
-    findNavigation?.match(pattern).map(el => {
-      const reg = patternT?.exec(el);
-      if (reg) {
-        const [, id, title] = reg;
+    if (findNavigation) {
+      const pattern = /(<h[1-6]) (id="[a-z]{0,}")(>)[a-z]{0,}(<\/h[1-6]>)/gim; // pick all h`s
+      const patternT = /(["][(a-z)]{0,}["])>([a-z]{0,})/gim;
 
-        setFastNavigation(prev => [
-          ...prev,
-          {
-            navId: id.replace(/(")/g, ""),
-            navStr: title.toLowerCase(),
-          },
-        ]);
-      }
-    });
+      findNavigation?.match(pattern).map(el => {
+        console.log(el);
+        const reg = patternT?.exec(el);
+        if (reg) {
+          const [, id, title] = reg;
+
+          setFastNavigation(prev => [
+            ...prev,
+            {
+              navId: id.replace(/(")/g, ""),
+              navStr: title.toLowerCase(),
+            },
+          ]);
+        }
+      });
+    }
   }, [props.content]);
 
   return (
@@ -48,8 +52,8 @@ export default function PostLayout(props: PostLayoutProps) {
               <ul>
                 {fastNavigation?.map(lists => {
                   return (
-                    <Link href={`#${lists.navStr}`}>
-                      <li key={lists.navId}>{lists.navStr}</li>
+                    <Link href={`#${lists.navStr}`} key={lists.navId}>
+                      <li>{lists.navStr}</li>
                     </Link>
                   );
                 })}
@@ -60,7 +64,7 @@ export default function PostLayout(props: PostLayoutProps) {
           <div className="box">
             <PostLayoutContent id="articleBody">
               <h1>{props.title}</h1>
-              <div dangerouslySetInnerHTML={{ __html: props.content }} />
+              <div dangerouslySetInnerHTML={{ __html: props?.content }} />
             </PostLayoutContent>
           </div>
         </Flex>
