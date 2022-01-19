@@ -21,7 +21,7 @@ export function ProjectBox({
           <Image
             width={20}
             height={20}
-            src={`https://raw.githubusercontent.com/devicons/devicon/master/icons/${language.toLowerCase()}/${language.toLowerCase()}-plain.svg`}
+            src={`https://raw.githubusercontent.com/devicons/devicon/master/icons/${language?.toLowerCase()}/${language?.toLowerCase()}-plain.svg`}
           />
         </small>
         <h5>{full_name}</h5>
