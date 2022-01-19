@@ -13,6 +13,9 @@ export const Project = styled.div`
   padding: 1rem;
   cursor: pointer;
   transition: background 0.3s ease;
+  background: white;
+  box-shadow: 0px 4px 10px rgb(187 225 250 / 75%);
+  margin-bottom: 1rem;
 
   &:hover {
     background: rgb(230, 230, 230);

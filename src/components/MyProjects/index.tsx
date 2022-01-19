@@ -23,7 +23,7 @@ export function MyProjects() {
   }, []);
 
   return (
-    <Box>
+    <Box withBg>
       <Content>
         <Title>
           <h5>Meus últimos projetos</h5>
