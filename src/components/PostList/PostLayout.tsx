@@ -42,17 +42,19 @@ export default function PostLayout(props: PostLayoutProps) {
     <>
       <PostArticleLayout>
         <Flex justifyContent="space-between">
-          <div className="box" id="boxFixed" style={{ width: "40%" }}>
-            <span>Navegação rápida</span>
-            <ul>
-              {fastNavigation?.map(lists => {
-                return (
-                  <Link href={`#${lists.navStr}`}>
-                    <li key={lists.navId}>{lists.navStr}</li>
-                  </Link>
-                );
-              })}
-            </ul>
+          <div className="box" style={{ width: "40%" }}>
+            <div id="boxFixed">
+              <span>Navegação rápida</span>
+              <ul>
+                {fastNavigation?.map(lists => {
+                  return (
+                    <Link href={`#${lists.navStr}`}>
+                      <li key={lists.navId}>{lists.navStr}</li>
+                    </Link>
+                  );
+                })}
+              </ul>
+            </div>
           </div>
 
           <div className="box">
