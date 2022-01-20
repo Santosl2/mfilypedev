@@ -50,13 +50,10 @@ export function Header() {
 
       <SubMenu isOpen={menuOpen}>
         <SubMenuItem>
-          <Link href="fdsfdsfsd">Sobre</Link>
+          <Link href="/about">Sobre</Link>
         </SubMenuItem>
         <SubMenuItem>
-          <Link href="fdsfdsfsd">Posts</Link>
-        </SubMenuItem>
-        <SubMenuItem>
-          <Link href="fdsfdsfsd">fdsfs</Link>
+          <Link href="/posts">Publicações</Link>
         </SubMenuItem>
       </SubMenu>
     </Menu>
