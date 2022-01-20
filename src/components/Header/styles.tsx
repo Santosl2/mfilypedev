@@ -43,6 +43,7 @@ export const HomeLink = styled.div`
   margin-right: 16px;
   padding-right: 16px;
   position: relative;
+  cursor: pointer;
   &:after {
     content: "";
     position: absolute;
