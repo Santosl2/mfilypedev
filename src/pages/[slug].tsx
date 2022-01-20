@@ -41,9 +41,7 @@ export const getStaticProps: GetStaticProps = async (
   if (slug) {
     try {
       props = await getPostBySlug(ctx.params.slug.toString());
-    } catch {
-      console.log("opa");
-    }
+    } catch {}
   }
 
   return {

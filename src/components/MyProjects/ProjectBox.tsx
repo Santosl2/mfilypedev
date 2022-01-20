@@ -19,7 +19,7 @@ export function ProjectBox({
       <ProjectTitle>
         <small>
           <Image
-            alt={language?.toString()}
+            alt={language ?? "Blog para estudar programação"}
             width={20}
             height={20}
             src={`https://raw.githubusercontent.com/devicons/devicon/master/icons/${language?.toLowerCase()}/${language?.toLowerCase()}-plain.svg`}
