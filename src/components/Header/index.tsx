@@ -38,7 +38,9 @@ export function Header() {
   return (
     <Menu>
       <MenuContent isOpen={isActive}>
-        <HomeLink>Matheus Filype</HomeLink>
+        <Link href="/">
+          <HomeLink>Matheus Filype</HomeLink>
+        </Link>
         <Button aria-label="Menu Hamburger" onClick={handleMenuOpen}>
           <HamburgerIcon isOpen={menuOpen}>
             <span></span>
