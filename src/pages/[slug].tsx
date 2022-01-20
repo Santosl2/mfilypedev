@@ -1,3 +1,4 @@
+import { Footer } from "@/components/Footer";
 import PostLayout from "@/components/PostList/PostLayout";
 import { SEO } from "@/SEO";
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
@@ -18,6 +19,8 @@ export default function Home(post: IPostContentProps) {
         description={post.description}
         content={post.content}
       />
+
+      <Footer />
     </>
   );
 }
