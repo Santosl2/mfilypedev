@@ -66,14 +66,21 @@ export const PostArticleLayout = styled.article`
     min-height: 100px;
     font-family: "Lato", sans-serif;
 
+    &:first-child {
+      display: none;
+    }
+
+    @media screen and (min-width: 768px) {
+      &:first-child {
+        display: block;
+      }
+    }
+
     #boxFixed {
       position: sticky;
       top: 0px;
       padding: 24px 16px;
-    }
-
-    & + div {
-      margin-left: 7rem;
+      margin-right: 7rem;
     }
 
     span {
