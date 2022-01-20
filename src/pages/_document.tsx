@@ -37,7 +37,7 @@ export default class MyDocumment extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang="pt-BR">
         <Head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
@@ -46,6 +46,11 @@ export default class MyDocumment extends Document {
           />
           <link
             href="https://fonts.googleapis.com/css2?family=Heebo:wght@200;400&display=swap"
+            rel="stylesheet"
+          />
+
+          <link
+            href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
             rel="stylesheet"
           />
         </Head>

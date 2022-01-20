@@ -18,6 +18,7 @@ export default createGlobalStyle`
       Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
       Helvetica Neue, sans-serif;
     -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
   }
   
   a {
@@ -50,6 +51,7 @@ export default createGlobalStyle`
 
   h1, h2, h3, h4, h5, h6, p{
     color: var(--gray-500);
+    text-rendering: optimizeLegibility;
   }
 
   h6 {

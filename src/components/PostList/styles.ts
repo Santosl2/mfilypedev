@@ -63,13 +63,32 @@ export const PostArticleLayout = styled.article`
   .box {
     width: 100%;
     color: rgb(94, 94, 94);
+    min-height: 100px;
+    font-family: "Lato", sans-serif;
 
-    & + div {
-      margin-left: 7rem;
+    &:first-child {
+      display: none;
     }
 
-    span:hover {
-      text-decoration: underline;
+    @media screen and (min-width: 768px) {
+      &:first-child {
+        display: block;
+      }
+    }
+
+    #boxFixed {
+      position: sticky;
+      top: 0px;
+      padding: 24px 16px;
+      margin-right: 7rem;
+    }
+
+    span {
+      margin: 1rem 0 1rem 0;
+      font-family: "Heebo", sans-serif;
+      &:hover {
+        text-decoration: underline;
+      }
     }
 
     ul {
@@ -77,6 +96,9 @@ export const PostArticleLayout = styled.article`
         padding: 1rem;
         transition: background-color 0.3s ease-in-out 0s;
         cursor: pointer;
+        text-transform: capitalize;
+        font-weight: bold;
+        font-family: "Lato", sans-serif;
         &:hover {
           background-color: rgb(230, 230, 230);
         }

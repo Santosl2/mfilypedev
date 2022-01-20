@@ -29,7 +29,7 @@ export function SEO({
       {description && <meta name="description" content={description} />}
       {image && <meta name="image" content={pageImage} />}
 
-      {!shouldIndexPage && <meta name="robots" content="noindex,nofollow" />}
+      {!shouldIndexPage && <meta name="robots" content="noindex, nofollow" />}
 
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta httpEquiv="x-ua-compatible" content="IE=edge,chrome=1" />
@@ -42,7 +42,7 @@ export function SEO({
 
       <meta property="og:title" content={pageTitle} />
       <meta property="og:description" content={description} />
-      <meta property="og:url" content="{http://gethash.com.br}" />
+      <meta property="og:url" content={process.env.BASE_URL} />
       <meta property="og:locale" content="pt_BR" />
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content={pageTitle} />

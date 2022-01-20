@@ -24,7 +24,10 @@ interface IPosts {
 export default function Home({ posts }) {
   return (
     <>
-      <SEO title="Início" />
+      <SEO
+        title="Início"
+        description="Site pessoal de um desenvolvedor FrontEnd"
+      />
 
       <Container>
         <AboutMe>
@@ -59,7 +62,7 @@ export default function Home({ posts }) {
         <Content>
           <Title>
             <h5>Postagens recentes</h5>
-            <a> Veja todos </a>
+            <Link href="/posts">Veja todos</Link>
           </Title>
           <Flex>
             {posts?.map((el: IPosts) => {
