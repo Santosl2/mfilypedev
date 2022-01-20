@@ -9,6 +9,7 @@ export const Post = styled.div`
   box-shadow: 0px 4px 10px rgba(187, 225, 250, 0.75);
   margin-bottom: 1rem;
   transition: background-color 0.3s ease-in-out 0s;
+  cursor: pointer;
 
   &:hover {
     background: rgb(230, 230, 230);
@@ -53,3 +54,35 @@ export const PostDescription = styled.div`
   font-family: "Heebo", sans-serif;
   font-weight: 400;
 `;
+
+export const PostArticleLayout = styled.article`
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+
+  .box {
+    width: 100%;
+    color: rgb(94, 94, 94);
+
+    & + div {
+      margin-left: 7rem;
+    }
+
+    span:hover {
+      text-decoration: underline;
+    }
+
+    ul {
+      li {
+        padding: 1rem;
+        transition: background-color 0.3s ease-in-out 0s;
+        cursor: pointer;
+        &:hover {
+          background-color: rgb(230, 230, 230);
+        }
+      }
+    }
+  }
+`;
+
+export const PostLayoutContent = styled.div``;

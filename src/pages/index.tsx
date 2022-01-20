@@ -1,22 +1,24 @@
 import { Footer } from "@/components/Footer";
 import { PostList } from "@/components/PostList";
 import { SEO } from "@/SEO";
-import { Box, Container, Flex } from "@/styles/components";
+import { Box, Container, Flex, Title } from "@/styles/components";
 import {
   AboutMe,
   LeftContent,
   MyPicture,
-  RecentPosts,
-  RecentPostsHead,
   RightContent,
 } from "@/styles/index.style";
 import Link from "next/link";
+import { Content } from "@/styles/components";
+
 import { getAllPosts } from "./api/posts";
+import { MyProjects } from "@/components/MyProjects";
 
 interface IPosts {
   slug: string;
   title: string;
   description: string;
+  createdAt: string;
 }
 
 export default function Home({ posts }) {
@@ -53,26 +55,30 @@ export default function Home({ posts }) {
           </RightContent>
         </AboutMe>
       </Container>
-      <Box>
-        <RecentPosts>
-          <RecentPostsHead>
+      <Box withBg>
+        <Content>
+          <Title>
             <h5>Postagens recentes</h5>
             <a> Veja todos </a>
-          </RecentPostsHead>
+          </Title>
           <Flex>
             {posts?.map((el: IPosts) => {
               return (
                 <PostList
+                  key={el.slug}
                   slug={el.slug}
                   title={el.title}
+                  createdAt={el.createdAt}
                   background="background.jpg"
                   description={el.description}
                 />
               );
             })}{" "}
           </Flex>
-        </RecentPosts>
+        </Content>
       </Box>
+
+      <MyProjects />
 
       <Footer />
     </>
@@ -80,11 +86,11 @@ export default function Home({ posts }) {
 }
 
 export async function getStaticProps() {
-  const allPosts = await getAllPosts();
+  const posts = await getAllPosts();
 
   return {
     props: {
-      posts: allPosts,
+      posts,
     },
   };
 }

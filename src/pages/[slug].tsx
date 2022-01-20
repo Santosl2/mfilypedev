@@ -1,10 +1,7 @@
-import { Banner } from "@/components/Banner";
-import { Header } from "@/components/Header";
-import { PostList } from "@/components/PostList";
 import PostLayout from "@/components/PostList/PostLayout";
 import { SEO } from "@/SEO";
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
-import { getAllPosts, getPostBySlug } from "./api/posts";
+import { getPostBySlug } from "./api/posts";
 
 interface IPostContentProps {
   description: string;
@@ -13,12 +10,9 @@ interface IPostContentProps {
 }
 
 export default function Home(post: IPostContentProps) {
-  console.log(post.title);
   return (
     <>
-      <SEO title="Início" />
-      <Header />
-
+      <SEO title={post.title ?? "Publicação"} description={post.description} />
       <PostLayout
         title={post.title}
         description={post.description}
@@ -38,7 +32,18 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async (
   ctx: GetStaticPropsContext,
 ) => {
+  const { slug } = ctx.params;
+  let props = {};
+
+  if (slug) {
+    try {
+      props = await getPostBySlug(ctx.params.slug.toString());
+    } catch {
+      console.log("opa");
+    }
+  }
+
   return {
-    props: await getPostBySlug(ctx.params.slug.toString()),
+    props,
   };
 };

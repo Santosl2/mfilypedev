@@ -11,14 +11,14 @@ export function Footer() {
             <Link href="">Twitter</Link>
           </li>
           <li>
-            <Link href="">
+            <Link href="https://github.com/Santosl2">
               <a rel="noopener" target={"_blank"}>
                 GitHub
               </a>
             </Link>
           </li>
           <li>
-            <Link href="">
+            <Link href="https://www.linkedin.com/in/mfilype/">
               <a rel="noopener" target={"_blank"}>
                 LinkedIn
               </a>
