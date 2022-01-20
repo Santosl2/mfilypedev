@@ -53,7 +53,7 @@ export default function Home({ posts }) {
           <RightContent>
             <MyPicture
               alt="Desenvolvedor FrontEnd React"
-              src="https://exame.com/wp-content/uploads/2018/10/brad-pitt-britain-allied-premiere.jpg"
+              src="/images/mfilype.jpg"
             />
           </RightContent>
         </AboutMe>
