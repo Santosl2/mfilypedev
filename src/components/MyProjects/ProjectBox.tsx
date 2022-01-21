@@ -14,6 +14,8 @@ export function ProjectBox({
   full_name,
   language,
 }: IMyProjectProps) {
+  const icon = language ? `${language.toLowerCase()}-plain` : "github-original";
+  console.log(language);
   return (
     <Project onClick={() => window.open(html_url, "_blank")}>
       <ProjectTitle>
@@ -22,7 +24,10 @@ export function ProjectBox({
             alt={language ?? "Blog para estudar programação"}
             width={20}
             height={20}
-            src={`https://raw.githubusercontent.com/devicons/devicon/master/icons/${language?.toLowerCase()}/${language?.toLowerCase()}-plain.svg`}
+            src={`https://raw.githubusercontent.com/devicons/devicon/master/icons/${icon.replace(
+              /-(plain|original)/gi,
+              "",
+            )}/${icon}.svg`}
           />
         </small>
         <h5>{full_name}</h5>
