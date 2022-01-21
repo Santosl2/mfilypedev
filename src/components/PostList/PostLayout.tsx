@@ -21,19 +21,15 @@ export default function PostLayout(props: PostLayoutProps) {
     const findNavigation = props?.content;
 
     if (findNavigation) {
-      const pattern = /(<h[1-6]) (id="[a-z]{0,}")(>)[a-z]{0,}(<\/h[1-6]>)/gim; // pick all h`s
-      const patternT = /(["][(a-z)]{0,}["])>([a-z]{0,})/gim;
+      const pattern = /<h[1-6] id="([\w\sáíã-]+)">(.+)(<)/gim; // pick all h`s
 
       findNavigation?.match(pattern).map(el => {
-        console.log(el);
-        const reg = patternT?.exec(el);
-        if (reg) {
-          const [, id, title] = reg;
-
+        const [, , id, title] = /("([\w\sáíã-]+)">(.+)(<))/gim.exec(el);
+        if (id && title) {
           setFastNavigation(prev => [
             ...prev,
             {
-              navId: id.replace(/(")/g, ""),
+              navId: id,
               navStr: title.toLowerCase(),
             },
           ]);
