@@ -59,7 +59,6 @@ export default function PostLayout(props: PostLayoutProps) {
 
           <div className="box">
             <PostLayoutContent id="articleBody">
-              <h1>{props.title}</h1>
               <div dangerouslySetInnerHTML={{ __html: props?.content }} />
             </PostLayoutContent>
           </div>

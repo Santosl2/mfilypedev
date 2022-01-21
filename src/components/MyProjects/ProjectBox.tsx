@@ -15,7 +15,7 @@ export function ProjectBox({
   language,
 }: IMyProjectProps) {
   const icon = language ? `${language.toLowerCase()}-plain` : "github-original";
-  console.log(language);
+
   return (
     <Project onClick={() => window.open(html_url, "_blank")}>
       <ProjectTitle>
