@@ -48,7 +48,7 @@ export default function PostLayout(props: PostLayoutProps) {
               <ul>
                 {fastNavigation?.map(lists => {
                   return (
-                    <Link href={`#${lists.navStr}`} key={lists.navId}>
+                    <Link href={`#${lists.navId}`} key={lists.navId}>
                       <li>{lists.navStr}</li>
                     </Link>
                   );
