@@ -5,6 +5,7 @@ interface IProps {
   title: string;
   description: string;
   content: string;
+  createdAt: number;
 }
 
 export async function getAllPosts() {
@@ -20,6 +21,7 @@ export async function getAllPosts() {
       slug: post.replace(".md", ""),
       title: meta.data.title,
       description: meta.data.description,
+      createdAt: meta.data.created_at,
     });
   }
 
@@ -36,6 +38,7 @@ export async function getPostBySlug(slug: string): Promise<IProps> {
     return {
       title: meta.data.title,
       description: meta.data.description,
+      createdAt: meta.data.created_at,
       content,
     };
   }

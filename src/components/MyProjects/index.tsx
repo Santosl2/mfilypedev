@@ -39,6 +39,7 @@ export function MyProjects() {
           {myProjects?.map(el => {
             return (
               <ProjectBox
+                key={el.html_url}
                 description={el.description}
                 html_url={el.html_url}
                 full_name={el.full_name}

@@ -22,7 +22,7 @@ export function PostList({
       <Post>
         <PostContent>
           <PostInfo>
-            <span>{new Date().toLocaleDateString("pt-BR")}</span>
+            <span>{new Date(createdAt).toLocaleDateString("pt-BR")}</span>
             <span>React, Next</span>
           </PostInfo>
           <h6>{title}</h6>
