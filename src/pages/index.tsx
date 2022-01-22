@@ -36,8 +36,7 @@ export default function Home({ posts }) {
               Ei, eu sou o Matheus Filype, <br /> Desenvolvedor Front End
             </h4>
             <p>
-              Atualmente sou desenvolvedor Front End. Atualmente estou
-              trabalhando na{" "}
+              Atualmente sou desenvolvedor Front End, na empresa{" "}
               <Link href="http://gethash.com.br">
                 <a target={"_blank"} rel="noopener">
                   Get Hash
@@ -89,7 +88,7 @@ export default function Home({ posts }) {
 }
 
 export async function getStaticProps() {
-  const posts = await getAllPosts();
+  const posts = await getAllPosts({ limit: 3 });
 
   return {
     props: {

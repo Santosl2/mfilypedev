@@ -41,7 +41,11 @@ export const getStaticProps: GetStaticProps = async (
   if (slug) {
     try {
       props = await getPostBySlug(ctx.params.slug.toString());
-    } catch {}
+    } catch {
+      return {
+        notFound: true,
+      };
+    }
   }
 
   return {
