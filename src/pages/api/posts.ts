@@ -8,7 +8,11 @@ interface IProps {
   createdAt: number;
 }
 
-export async function getAllPosts() {
+interface IPostProps {
+  limit?: number;
+}
+
+export async function getAllPosts({ limit }: IPostProps) {
   const context = require.context("../../_posts", false, /\.md$/);
   const posts = [];
 
