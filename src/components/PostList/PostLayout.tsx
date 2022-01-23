@@ -41,7 +41,7 @@ export default function PostLayout(props: PostLayoutProps) {
   return (
     <>
       <PostArticleLayout>
-        <Flex justifyContent="space-between">
+        <Flex justifyContent="space-between" flexWrap="nowrap">
           <div className="box" style={{ width: "40%" }}>
             <div id="boxFixed">
               <span>Navegação rápida</span>

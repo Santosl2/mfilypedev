@@ -4,6 +4,7 @@ import styled from "styled-components";
 interface IFlexProps {
   flexDir?: "row" | "row-reverse" | "column" | "column-reverse";
   justifyContent?: "center" | "space-between" | "space-around" | "space-evenly";
+  flexWrap?: "wrap" | "nowrap" | "wrap-reverse" | "inherit";
 }
 
 interface IProps {
@@ -34,7 +35,8 @@ export const Flex = styled.div<IFlexProps>`
     props.justifyContent ? props.justifyContent : "inherit"};
 
   @media screen and (min-width: 768px) {
-    flex-direction: ${props => (props.flexDir ? props.flexDir : "row")};
+    flex-flow: ${props => (props.flexWrap ? props.flexWrap : "wrap")}
+      ${props => (props.flexDir ? props.flexDir : "row")};
   }
 `;
 
