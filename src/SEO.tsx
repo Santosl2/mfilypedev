@@ -60,6 +60,25 @@ export function SEO({
       <meta name="twitter:image:alt" content="Thumbnail" />
       <meta name="twitter:image:width" content="1200" />
       <meta name="twitter:image:height" content="620" />
+
+      <link
+        rel="apple-touch-icon"
+        sizes="76x76"
+        href="/images/apple-touch-icon.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="/images/favicon-32x32.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="/images/favicon-16x16.png"
+      />
+      <link rel="icon" type="image/png" href="/images/favicon.png" />
     </Head>
   );
 }
