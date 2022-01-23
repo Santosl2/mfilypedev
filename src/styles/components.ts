@@ -34,7 +34,7 @@ export const Flex = styled.div<IFlexProps>`
     props.justifyContent ? props.justifyContent : "inherit"};
 
   @media screen and (min-width: 768px) {
-    flex-direction: ${props => (props.flexDir ? props.flexDir : "row")};
+    flex-flow: wrap ${props => (props.flexDir ? props.flexDir : "row")};
   }
 `;
 
