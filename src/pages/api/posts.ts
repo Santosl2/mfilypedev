@@ -29,7 +29,11 @@ export async function getAllPosts({ limit }: IPostProps) {
     });
   }
 
-  return posts;
+  return posts
+    .sort((a, b) => {
+      return b.createdAt - a.createdAt;
+    })
+    .slice(0, limit);
 }
 
 export async function getPostBySlug(slug: string): Promise<IProps> {
