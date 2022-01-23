@@ -10,6 +10,7 @@ export const Post = styled.div`
   margin-bottom: 1rem;
   transition: background-color 0.3s ease-in-out 0s;
   cursor: pointer;
+  flex-shrink: 0;
 
   &:hover {
     background: rgb(230, 230, 230);
@@ -20,9 +21,8 @@ export const Post = styled.div`
   }
 
   @media screen and (min-width: 768px) {
-    & + div {
-      margin-left: 1rem;
-    }
+    flex-basis: 370px;
+    margin-left: 1rem;
   }
 `;
 
