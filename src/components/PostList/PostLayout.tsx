@@ -7,7 +7,7 @@ import {
   PostLayoutTitle,
   ShareButton,
 } from "./styles";
-import { FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { FaLink, FaTwitter, FaLinkedin } from "react-icons/fa";
 import { FormatDate } from "@/utils/FormatDate";
 interface PostLayoutProps {
   title: string;
@@ -31,23 +31,24 @@ export default function PostLayout(props: PostLayoutProps) {
       url: window.location.href,
     };
 
-    switch (type) {
-      case "twitter":
-        window.open(
-          `https://twitter.com/intent/tweet?url=${shareData.url}&text=${shareData.title}`,
-        );
-        break;
+    try {
+      switch (type) {
+        case "twitter":
+          window.open(
+            `https://twitter.com/intent/tweet?url=${shareData.url}&text=${shareData.title}`,
+          );
+          break;
 
-      case "linkedin":
-        window.open(`
+        case "linkedin":
+          window.open(`
             https://www.linkedin.com/shareArticle?url=${shareData.url}&mini=true&title=${shareData.title}
           `);
-        break;
-    }
+          break;
 
-    try {
-      console.log("crickey");
-      await navigator.share(shareData);
+        default:
+          await navigator.share(shareData);
+          break;
+      }
     } catch {}
   };
 
@@ -120,6 +121,15 @@ export default function PostLayout(props: PostLayoutProps) {
                 socialColor="#1D9BF0"
               >
                 <FaTwitter size={24} />
+              </ShareButton>
+              <ShareButton
+                onClick={() => {
+                  sharePublication("");
+                }}
+                color="white"
+                socialColor="#4A5240"
+              >
+                <FaLink size={24} />
               </ShareButton>
             </Flex>
           </div>
