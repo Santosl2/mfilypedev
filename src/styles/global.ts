@@ -9,6 +9,7 @@ export default createGlobalStyle`
     --gray-500: rgb(46, 46, 46);
     --gray-400: rgb(94, 94, 94);
     --blue-500: #EDF7FA
+    --gray-700: #2D3748
   }
   html,
   body {
@@ -52,8 +53,10 @@ export default createGlobalStyle`
   h1, h2, h3, h4, h5, h6, p{
     color: var(--gray-500);
     text-rendering: optimizeLegibility;
+    margin: 1rem 0 1rem 0;
   }
 
+  
   h6 {
     font-size: 1.2em;
   }

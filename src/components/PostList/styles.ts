@@ -1,4 +1,9 @@
+import { darken } from "polished";
 import styled from "styled-components";
+
+interface IProps {
+  socialColor: string;
+}
 
 export const Post = styled.div`
   background: white;
@@ -106,4 +111,38 @@ export const PostArticleLayout = styled.article`
   }
 `;
 
-export const PostLayoutContent = styled.div``;
+export const PostLayoutContent = styled.div`
+  margin-bottom: 2rem;
+
+  p {
+    font-size: 1.1rem;
+  }
+`;
+
+export const PostLayoutTitle = styled.div`
+  margin-bottom: 2rem;
+
+  h1 {
+    font-size: 2rem;
+  }
+`;
+
+export const ShareButton = styled.button<IProps>`
+  max-width: 100%;
+  min-width: 150px;
+  background: ${props => (props.socialColor ? props.socialColor : "#eee")};
+  cursor: pointer;
+  height: 45px;
+  margin-right: 5px;
+  border: 2px solid ${props => (props.socialColor ? props.socialColor : "#eee")};
+  border-radius: 4px;
+  color: ${props => props.color};
+  transition: 0.3s ease background;
+  margin-bottom: 1rem;
+  &:hover {
+    border-color: ${props =>
+      props.socialColor ? darken(0.1, props.socialColor) : "#eee"};
+    background: ${props =>
+      props.socialColor ? darken(0.1, props.socialColor) : "#eee"};
+  }
+`;

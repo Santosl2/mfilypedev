@@ -8,6 +8,7 @@ interface IPostContentProps {
   description: string;
   title: string;
   content: string;
+  createdAt: number;
 }
 
 export default function Home(post: IPostContentProps) {
@@ -18,6 +19,7 @@ export default function Home(post: IPostContentProps) {
         title={post.title}
         description={post.description}
         content={post.content}
+        createdAt={post.createdAt}
       />
 
       <Footer />
