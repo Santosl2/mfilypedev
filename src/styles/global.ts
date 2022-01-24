@@ -75,4 +75,13 @@ export default createGlobalStyle`
     margin-bottom: 1.5rem;
   }
 
+  code {
+    border-radius: 5px;
+    span {
+      font-family: inherit !important;
+      &:hover {
+        text-decoration: none !important;
+      }
+    }
+  }
 `;

@@ -1,5 +1,13 @@
 import matter from "gray-matter";
 import { marked } from "marked";
+import hljs from "highlight.js";
+
+marked.setOptions({
+  langPrefix: "hljs language-", // highlight.js css expects a top-level 'hljs' class.
+  highlight: function (code) {
+    return hljs.highlightAuto(code, ["typescript"]).value;
+  },
+});
 
 interface IProps {
   title: string;

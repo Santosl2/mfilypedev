@@ -96,7 +96,6 @@ export const PostArticleLayout = styled.article`
         padding: 1rem;
         transition: background-color 0.3s ease-in-out 0s;
         cursor: pointer;
-        text-transform: capitalize;
         font-weight: bold;
         font-family: "Lato", sans-serif;
         &:hover {

@@ -21,16 +21,17 @@ export default function PostLayout(props: PostLayoutProps) {
     const findNavigation = props?.content;
 
     if (findNavigation) {
-      const pattern = /<h[1-6] id="([\w\sáíã-]+)">(.+)(<)/gim; // pick all h`s
+      const pattern = /<h[1-6] id="([\w\sáíãç-]+)">(.+)(<)/gim; // pick all h`s
 
       findNavigation?.match(pattern).map(el => {
-        const [, , id, title] = /("([\w\sáíã-]+)">(.+)(<))/gim.exec(el);
+        console.log(el);
+        const [, , id, title] = /("([\w\sáíãç-]+)">(.+)(<))/gim.exec(el);
         if (id && title) {
           setFastNavigation(prev => [
             ...prev,
             {
               navId: id,
-              navStr: title.toLowerCase(),
+              navStr: title,
             },
           ]);
         }
@@ -42,7 +43,7 @@ export default function PostLayout(props: PostLayoutProps) {
     <>
       <PostArticleLayout>
         <Flex justifyContent="space-between" flexWrap="nowrap">
-          <div className="box" style={{ width: "40%" }}>
+          <div className="box" style={{ width: "50%" }}>
             <div id="boxFixed">
               <span>Navegação rápida</span>
               <ul>
@@ -59,6 +60,7 @@ export default function PostLayout(props: PostLayoutProps) {
 
           <div className="box">
             <PostLayoutContent id="articleBody">
+              {props?.title}
               <div dangerouslySetInnerHTML={{ __html: props?.content }} />
             </PostLayoutContent>
           </div>
