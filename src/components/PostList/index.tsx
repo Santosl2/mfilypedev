@@ -1,7 +1,7 @@
-import styles from "./styles.module.scss";
 import Link from "next/link";
 import { Post, PostContent, PostDescription, PostInfo } from "./styles";
-import { Flex } from "@/styles/components";
+import { FormatDate } from "@/utils/FormatDate";
+
 interface IParams {
   title: string;
   description: string;
@@ -22,7 +22,7 @@ export function PostList({
       <Post>
         <PostContent>
           <PostInfo>
-            <span>{new Date(createdAt).toLocaleDateString("pt-BR")}</span>
+            <span>{FormatDate(Number(createdAt))}</span>
             <span>React, Next</span>
           </PostInfo>
           <h6>{title}</h6>
