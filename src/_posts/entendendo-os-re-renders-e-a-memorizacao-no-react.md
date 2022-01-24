@@ -88,7 +88,7 @@ A memoização é o processo de armazenar em cache os resultados de uma função
 <br/>
 <br/>
 
-### Algoritmo de Reconciliação {#teste}
+### Algoritmo de Reconciliação
 
 Re-renderizar um componente significa simplesmente chamar a função do componente novamente. Se esse componente tiver componentes filhos, ele chamará as funções desses componentes e assim por diante até a árvore. Os resultados são então diferidos com o DOM para determinar se a interface do usuário deve ser atualizada. Esse processo de diferenciação é chamado de [reconciliação](https://reactjs.org/docs/reconciliation.html).
 
