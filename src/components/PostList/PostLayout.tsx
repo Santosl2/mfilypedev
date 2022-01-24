@@ -24,7 +24,6 @@ export default function PostLayout(props: PostLayoutProps) {
       const pattern = /<h[1-6] id="([\w\sáíãç-]+)">(.+)(<)/gim; // pick all h`s
 
       findNavigation?.match(pattern).map(el => {
-        console.log(el);
         const [, , id, title] = /("([\w\sáíãç-]+)">(.+)(<))/gim.exec(el);
         if (id && title) {
           setFastNavigation(prev => [
