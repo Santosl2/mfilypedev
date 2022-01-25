@@ -87,4 +87,8 @@ export default createGlobalStyle`
       }
     }
   }
+  
+  img {
+    max-width: 100%;
+   }
 `;
