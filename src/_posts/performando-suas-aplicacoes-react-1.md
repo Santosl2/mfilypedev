@@ -28,7 +28,7 @@ _Vale ressaltar que sempre que o componente Pai atualizar, os componentes filhos
 
 # memo
 
-O memo irá basicamente comparar se houve alguma alteração nas propriedades do componente, antes mesmo de chegar no Fluxo de Renderização.
+O memo irá basicamente comparar se houve alguma alteração nas propriedades do componente, antes mesmo de chegar no Fluxo de Renderização. Se caso não houver nenhuma alteração, ele irá armazenar esse componente e só voltará a atualiza-lo quando houver alguma alteração nas props.
 
 Imagine que tivessemos um componente filho, que recebesse algumas props, como neste exemplo:
 
@@ -111,13 +111,13 @@ Neste trecho de código eu estou utilizando o método _is_ para determinar se os
 
 _Nossa aplicação sem memo:_
 
-![React aprendendo a usar o memo](https://giphy.com/embed/TRxjeDq66bOv9PNyOJ)
+![React aprendendo a usar o memo](https://imgur.com/QmEJmMA.gif)
 
 <br/>
 
 _Nossa aplicação com memo:_
 
-![React aprendendo a usar o memo](https://giphy.com/embed/7BZDUOLo9N7eHSTICX")
+![React aprendendo a usar o memo](https://imgur.com/6xtA5fA.gif)
 
 <br/>
 
