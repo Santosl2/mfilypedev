@@ -8,7 +8,7 @@ export default createGlobalStyle`
     --gray-200: #0000009c;
     --gray-500: rgb(46, 46, 46);
     --gray-400: rgb(94, 94, 94);
-    --blue-500: #EDF7FA
+    --blue-500: #EDF7FA;
     --gray-700: #2D3748
   }
   html,
@@ -20,7 +20,9 @@ export default createGlobalStyle`
       Helvetica Neue, sans-serif;
     -webkit-font-smoothing: antialiased;
     scroll-behavior: smooth;
+    
   }
+
   
   a {
     color: inherit;
@@ -39,7 +41,6 @@ export default createGlobalStyle`
 
   li {
     font-family: "Inter", sans-serif;
-    list-style: none;
   }
 
   #responsive {
@@ -87,6 +88,27 @@ export default createGlobalStyle`
       }
     }
   }
+
+  .box {
+    ol {
+      background: var(--gray-500);
+      border-radius: 3px;
+      color: white
+    }
+    li {
+      &::marker {
+        color: black
+      }
+      padding: 1rem;
+    }
+    &:first-child { 
+      z-index: 3;
+      li {
+        list-style: none;
+      }
+  }
+}
+  
   
   img {
     max-width: 100%;

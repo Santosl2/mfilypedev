@@ -10,7 +10,7 @@ export const Post = styled.div`
   max-width: 100%;
   flex: 1;
   min-height: 218px;
-  border-radius: 4px;
+  border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(187, 225, 250, 0.75);
   margin-bottom: 1rem;
   transition: background-color 0.3s ease-in-out 0s;
@@ -55,7 +55,8 @@ export const PostInfo = styled.div`
 `;
 
 export const PostDescription = styled.div`
-  font-size: 1.1rem;
+  font-size: 1rem;
+
   font-family: "Heebo", sans-serif;
   font-weight: 400;
 `;

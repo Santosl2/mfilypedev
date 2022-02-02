@@ -30,7 +30,7 @@ export default function Home({ posts }) {
       />
 
       <Container>
-        <AboutMe>
+        <AboutMe data-aos="fade-up" data-aos-anchor-placement="center-bottom">
           <LeftContent>
             <h4>
               Ei, eu sou o Matheus Filype, <br /> Desenvolvedor Front End

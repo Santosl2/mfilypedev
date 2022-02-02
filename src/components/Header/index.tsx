@@ -49,10 +49,10 @@ export function Header() {
       </MenuContent>
 
       <SubMenu isOpen={menuOpen}>
-        <SubMenuItem>
+        <SubMenuItem onClick={() => setMenuOpen(false)}>
           <Link href="/about">Sobre</Link>
         </SubMenuItem>
-        <SubMenuItem>
+        <SubMenuItem onClick={() => setMenuOpen(false)}>
           <Link href="/posts">Publicações</Link>
         </SubMenuItem>
       </SubMenu>

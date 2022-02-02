@@ -8,7 +8,7 @@ export const Container = styled.section`
 export const Project = styled.div`
   width: 100%;
   min-height: 100px;
-  border-radius: 5px;
+  border-radius: 8px;
   padding: 1rem;
   cursor: pointer;
   transition: background 0.3s ease;

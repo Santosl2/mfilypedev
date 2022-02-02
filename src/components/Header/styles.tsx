@@ -12,6 +12,7 @@ export const Menu = styled.header`
   max-width: var(--layout-size);
   position: sticky;
   top: 0;
+  z-index: 2;
 `;
 
 export const MenuContent = styled.div<IMenuProps>`

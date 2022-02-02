@@ -11,6 +11,7 @@ export const FooterSection = styled.footer`
     display: flex;
 
     li {
+      list-style: none;
       margin-left: 1rem;
     }
   }
@@ -21,7 +22,6 @@ export const FooterSection = styled.footer`
       padding-right: 1rem;
       margin-right: 1rem;
       border-right: 1px solid var(--gray-400);
-      margin-bottom: 0;
     }
   }
 `;

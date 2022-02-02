@@ -17,7 +17,10 @@ export function ProjectBox({
   const icon = language ? `${language.toLowerCase()}-plain` : "github-original";
 
   return (
-    <Project onClick={() => window.open(html_url, "_blank")}>
+    <Project
+      onClick={() => window.open(html_url, "_blank")}
+      data-aos="zoom-in-up"
+    >
       <ProjectTitle>
         <small>
           <Image

@@ -19,7 +19,7 @@ export function PostList({
 }: IParams) {
   return (
     <Link href={slug}>
-      <Post>
+      <Post data-aos="fade-left">
         <PostContent>
           <PostInfo>
             <span>{FormatDate(Number(createdAt))}</span>
