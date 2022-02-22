@@ -7,7 +7,6 @@ import {
   useBreakpointValue,
   Heading,
   Icon,
-  useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
 
@@ -79,7 +78,8 @@ export function BannerHero({
 
         <Flex
           position={"absolute"}
-          bottom={"0"}
+          bottom={"-1px"}
+          right={0}
           maxW={"100%"}
           height={{ base: 50, md: 100 }}
         >

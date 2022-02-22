@@ -57,7 +57,7 @@ export default function Home({ posts }) {
             <Box>
               <Animation name={"coding2.json"} />
             </Box>
-            <Box textAlign={"center"}>
+            <Box textAlign={"center"} marginBottom={"4rem"}>
               <Flex
                 flexWrap={"wrap"}
                 alignItems={"center"}

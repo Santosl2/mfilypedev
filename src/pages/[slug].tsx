@@ -1,6 +1,5 @@
-import { BannerHero, PostHero } from "@/components";
-import { Footer } from "@/components/Footer";
-import { PostLayoutN } from "@/components/PostList/PostLayoutN";
+import { PostHero } from "@/components";
+import { PostLayout } from "@/components";
 import { PostInterface } from "@/interface/PostsInterface";
 import { SEO } from "@/SEO";
 import { Container } from "@chakra-ui/react";
@@ -18,7 +17,7 @@ export default function Home(post: PostInterface) {
       />
 
       <Container maxW="container.xl" marginTop={"5rem"}>
-        <PostLayoutN
+        <PostLayout
           title={post.title}
           description={post.description}
           content={post.content}

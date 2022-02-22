@@ -1,6 +1,6 @@
 import { Header } from "@/components";
 import { ChakraProvider } from "@chakra-ui/react";
-import "@/styles/custom.css";
+import "@/styles/custom.scss";
 import { Footer } from "@/components";
 import "highlight.js/scss/atom-one-light.scss";
 

@@ -1,20 +1,10 @@
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import {
   Box,
   Flex,
-  Avatar,
   HStack,
   Link,
-  IconButton,
   Button,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuDivider,
-  useDisclosure,
-  useColorModeValue,
-  Stack,
   useColorMode,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
@@ -49,18 +39,49 @@ const NavLink = ({ children, link }: { children: ReactNode; link: string }) => (
 );
 
 export function Header() {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [isFixed, setIsFixed] = useState(false);
   const { colorMode, toggleColorMode } = useColorMode();
 
+  useEffect(() => {
+    if (window.outerWidth <= 768) {
+      setIsFixed(true);
+      return;
+    }
+
+    window.addEventListener("scroll", event => {
+      if (window.pageYOffset > 50) {
+        setIsFixed(true);
+      } else {
+        setIsFixed(false);
+      }
+    });
+
+    return () => {
+      window.removeEventListener("scroll", () => {});
+    };
+  }, []);
   return (
     <>
-      <Box position={"fixed"} width={"100%"} zIndex={10} px={4} top="0">
+      <Box
+        position={"fixed"}
+        width={"100%"}
+        zIndex={10}
+        px={4}
+        top="0"
+        backgroundColor={`${isFixed && "rgba(0, 0, 0, 0.65)"}`}
+      >
         <Flex
           h={16}
           alignItems={"center"}
           justifyContent={{ base: "space-between", md: "space-around" }}
         >
-          <HStack spacing={8} alignItems={"center"} color="white">
+          <HStack
+            onClick={() => (window.location.href = "/")}
+            spacing={8}
+            alignItems={"center"}
+            color="white"
+            cursor={"pointer"}
+          >
             <Box fontFamily={"Lato"} fontSize={24}>
               mfilype.dev
             </Box>
