@@ -15,8 +15,9 @@ import {
   useDisclosure,
   useColorModeValue,
   Stack,
+  useColorMode,
 } from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Links = [
@@ -49,6 +50,7 @@ const NavLink = ({ children, link }: { children: ReactNode; link: string }) => (
 
 export function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { colorMode, toggleColorMode } = useColorMode();
 
   return (
     <>
@@ -70,6 +72,10 @@ export function Header() {
                 {link.component}
               </NavLink>
             ))}
+
+            <Button background={"transparent"} onClick={toggleColorMode}>
+              {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+            </Button>
           </HStack>
         </Flex>
       </Box>

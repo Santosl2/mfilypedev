@@ -18,7 +18,7 @@ export function BannerHero(): JSX.Element {
   const { colorMode } = useColorMode();
 
   return (
-    <Flex w={"full"} minH={"80vh"} background={"#5779c7"}>
+    <Flex w={"full"} minH={"80vh"} background={"gray.700"}>
       <VStack
         position={"relative"}
         w={"full"}
@@ -44,19 +44,19 @@ export function BannerHero(): JSX.Element {
             maxW={550}
             fontSize={useBreakpointValue({ base: "sm", md: "md" })}
           >
-            Um desenvolvedor Front End apaixonado com experiência na construção
-            de aplicativos Web com JavaScript / TypeScript / React JS / NextJs e
-            algumas outras bibliotecas e frameworks interessantes.
+            Um desenvolvedor FrontEnd apaixonado com experiência na construção
+            de aplicativos web com JavaScript / TypeScript / React JS / Next JS.
+            Atualmente venho estudando Node JS para construção de API's.
           </Text>
           <Stack direction={"row"}>
             <Button
               onClick={() => {
                 window.open(process.env.GITHUB_URL);
               }}
-              bg={"gray.700"}
+              bg={"gray.800"}
               rounded={"full"}
               color={"white"}
-              _hover={{ bg: "gray.800" }}
+              _hover={{ bg: "gray.900" }}
             >
               <Icon as={FaGithub} />
             </Button>
