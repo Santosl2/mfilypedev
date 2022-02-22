@@ -1,28 +1,33 @@
+import { BannerHero, PostHero } from "@/components";
 import { Footer } from "@/components/Footer";
-import PostLayout from "@/components/PostList/PostLayout";
+import { PostLayoutN } from "@/components/PostList/PostLayoutN";
+import { PostInterface } from "@/interface/PostsInterface";
 import { SEO } from "@/SEO";
+import { Container } from "@chakra-ui/react";
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { getPostBySlug } from "./api/posts";
 
-interface IPostContentProps {
-  description: string;
-  title: string;
-  content: string;
-  createdAt: number;
-}
-
-export default function Home(post: IPostContentProps) {
+export default function Home(post: PostInterface) {
   return (
     <>
       <SEO title={post.title ?? "Publicação"} description={post.description} />
-      <PostLayout
+      <PostHero
         title={post.title}
         description={post.description}
-        content={post.content}
-        createdAt={post.createdAt}
+        background={post.background}
       />
 
-      <Footer />
+      <Container maxW="container.xl" marginTop={"5rem"}>
+        <PostLayoutN
+          title={post.title}
+          description={post.description}
+          content={post.content}
+          createdAt={post.createdAt}
+          tags={post.tags}
+        />
+      </Container>
+
+      <br />
     </>
   );
 }

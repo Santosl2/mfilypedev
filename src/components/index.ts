@@ -3,3 +3,4 @@ export * from "./Animation";
 export * from "./Header";
 export * from "./MyStacks";
 export * from "./Footer";
+export * from "./PostList";

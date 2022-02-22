@@ -14,9 +14,15 @@ import {
 import { Animation } from "@/components/Animation";
 import { FaDownload, FaGithub, FaLinkedinIn } from "react-icons/fa";
 
-export function BannerHero(): JSX.Element {
-  const { colorMode } = useColorMode();
-
+export function BannerHero({
+  background,
+  title,
+  description,
+}: {
+  background?: string;
+  title?: string;
+  description?: string;
+}): JSX.Element {
   return (
     <Flex w={"full"} minH={"80vh"} background={"gray.700"}>
       <VStack
@@ -27,13 +33,7 @@ export function BannerHero(): JSX.Element {
         px={useBreakpointValue({ base: 4, md: 8 })}
         marginTop={{ base: "5rem", md: "initial" }}
       >
-        <Stack
-          maxW={"600px"}
-          align={"flex-start"}
-          spacing={6}
-          marginTop={"1rem"}
-          marginRight={3}
-        >
+        <Stack maxW={"600px"} align={"flex-start"} spacing={6} marginRight={3}>
           <Heading color={"#fff"} fontFamily={"Lato"}>
             Ei, eu sou o Matheus Filype
           </Heading>

@@ -2,16 +2,13 @@ import { BannerHero, MyStacks } from "@/components";
 import { Post } from "@/components/PostList";
 import { PostInterface } from "@/interface/PostsInterface";
 import { SEO } from "@/SEO";
-import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 import {
   Box,
-  Button,
   Container,
   Divider,
   Flex,
   Heading,
   Stack,
-  useColorMode,
 } from "@chakra-ui/react";
 
 import { MdCheckCircle, MdSettings } from "react-icons/md";

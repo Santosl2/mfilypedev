@@ -3,6 +3,7 @@ title: "Performando suas aplicações React #1"
 description: "Nesta publicação, eu explico um pouco sobre como funciona todo o Fluxo de Renderização do React e sobre o memo."
 created_at: 1643137952716
 tags: tutorial,react,next
+background: "https://i.imgur.com/ndZVmVb.png"
 ---
 
 O React é uma biblioteca que tem crescido bastante nos últimos meses. Ela por si própria já é bastante perfomática, porém em alguns casos ela poder ser bastante lenta. Nesta publicação eu explico um pouco de como funciona o Fluxo de renderização do React, e sobre um HOC (High-Order Component) do React chamado memo. Sem mais delongas, vamos ao que interessa.

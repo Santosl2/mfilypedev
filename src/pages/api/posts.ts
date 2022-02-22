@@ -28,6 +28,7 @@ export async function getAllPosts({ limit }: IPostProps) {
       title: meta.data.title,
       description: meta.data.description,
       createdAt: meta.data.created_at,
+      background: meta.data.background,
       tags: meta.data.tags,
     });
   }
@@ -51,6 +52,7 @@ export async function getPostBySlug(slug: string): Promise<PostInterface> {
       description: meta.data.description,
       createdAt: meta.data.created_at,
       tags: meta.data.tags,
+      background: meta.data.background,
       content,
     };
   }

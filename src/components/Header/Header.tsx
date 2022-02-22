@@ -54,7 +54,7 @@ export function Header() {
 
   return (
     <>
-      <Box position={"fixed"} width={"100%"} zIndex={10} px={4}>
+      <Box position={"fixed"} width={"100%"} zIndex={10} px={4} top="0">
         <Flex
           h={16}
           alignItems={"center"}

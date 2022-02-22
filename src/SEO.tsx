@@ -10,17 +10,15 @@ interface SEOProps {
 
 export function SEO({
   title,
-  description,
-  image,
+  description = "Blog sobre programação",
+  image = "37b2bc18eb35e963179d66adcee02d67.png",
   shouldExcludeTitleSuffix = false,
   shouldIndexPage = true,
 }: SEOProps) {
   const pageTitle = `${title} ${
     !shouldExcludeTitleSuffix ? ` |  ${process.env.SITE_NAME}` : ""
   }`;
-  const pageImage = image
-    ? `${process.env.BASE_URL}/assets/images/${image}`
-    : null;
+  const pageImage = image ? `${process.env.BASE_URL}/images/${image}` : null;
 
   return (
     <Head>
