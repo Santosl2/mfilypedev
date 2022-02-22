@@ -3,7 +3,7 @@ title: "Sobre mim"
 description: "Nessa publicação eu falo um pouco sobre mim e sobre como eu iniciei no mundo programação, e quais linguagens já tive contato."
 created_at: 1642723845747
 tags: sobre
-background: "https://i.imgur.com/KedUJuI.png"
+background: "https://i.imgur.com/RQpMAwA.png"
 ---
 
 # Sobre mim

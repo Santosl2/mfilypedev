@@ -33,13 +33,14 @@ export function PostHero({
         position={"relative"}
         w={"full"}
         justify={"center"}
+        alignItems="center"
         flexDirection={useBreakpointValue({ base: "column", md: "row" })}
         px={useBreakpointValue({ base: 4, md: 8 })}
         marginTop={{ base: "5rem", md: "initial" }}
         textAlign={"center"}
         bgGradient={"linear(to-r, blackAlpha.600, transparent)"}
       >
-        <Stack maxW={"600px"} align={"flex-start"} spacing={6} marginRight={3}>
+        <Stack maxW={"600px"} align={"center"} spacing={6} marginRight={3}>
           <Heading color={"#fff"} fontFamily={"Lato"}>
             {title}
           </Heading>

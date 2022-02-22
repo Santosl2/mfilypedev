@@ -11,7 +11,7 @@ interface SEOProps {
 export function SEO({
   title,
   description = "Blog sobre programação",
-  image = "37b2bc18eb35e963179d66adcee02d67.png",
+  image = "37b2bc18eb35e963179d66adcee02d672.png",
   shouldExcludeTitleSuffix = false,
   shouldIndexPage = true,
 }: SEOProps) {
