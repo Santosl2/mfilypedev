@@ -52,7 +52,7 @@ export const HomeLink = styled.div`
     left: -3px;
     width: 95%;
     height: 2px;
-    background: rgb(24, 64, 88);
+    background: rgb(31, 93, 131);
     transform: scaleX(0);
   }
 
