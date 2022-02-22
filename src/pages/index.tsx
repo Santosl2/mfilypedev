@@ -37,7 +37,7 @@ export default function Home({ posts }) {
                   slug={el.slug}
                   title={el.title}
                   createdAt={el.createdAt}
-                  background="background.jpg"
+                  background={el.background}
                   description={el.description}
                   tags={el.tags}
                 />

@@ -1,7 +1,11 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ["raw.githubusercontent.com", "images.unsplash.com"],
+    domains: [
+      "raw.githubusercontent.com",
+      "images.unsplash.com",
+      "i.imgur.com",
+    ],
   },
   webpack: function (config) {
     config.module.rules.push({ test: /\.md$/, use: "raw-loader" });
