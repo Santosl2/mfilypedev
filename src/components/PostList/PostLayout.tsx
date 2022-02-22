@@ -1,56 +1,22 @@
-import { Flex } from "@/styles/components";
-import Link from "next/link";
-import { useEffect, useState } from "react";
+import { PostInterface } from "@/interface/PostsInterface";
+import styles from "./customStyles.module.scss";
 import {
-  PostArticleLayout,
-  PostLayoutContent,
-  PostLayoutTitle,
-  ShareButton,
-} from "./styles";
-import { FaLink, FaTwitter, FaLinkedin } from "react-icons/fa";
-import { FormatDate } from "@/utils/FormatDate";
-interface PostLayoutProps {
-  title: string;
-  description: string;
-  content: string;
-  createdAt: number;
-}
+  Box,
+  Flex,
+  Heading,
+  Link,
+  List,
+  ListItem,
+  Stack,
+} from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 
-interface IFastNavigation {
+type IFastNavigation = {
   navId: string;
   navStr: string;
-}
-
-export default function PostLayout(props: PostLayoutProps) {
+};
+export function PostLayout(props: PostInterface): JSX.Element {
   const [fastNavigation, setFastNavigation] = useState<IFastNavigation[]>([]);
-
-  const sharePublication = async (type: string) => {
-    let shareData = {
-      title: props.title,
-      description: props.description,
-      url: window.location.href,
-    };
-
-    try {
-      switch (type) {
-        case "twitter":
-          window.open(
-            `https://twitter.com/intent/tweet?url=${shareData.url}&text=${shareData.title}`,
-          );
-          break;
-
-        case "linkedin":
-          window.open(`
-            https://www.linkedin.com/shareArticle?url=${shareData.url}&mini=true&title=${shareData.title}
-          `);
-          break;
-
-        default:
-          await navigator.share(shareData);
-          break;
-      }
-    } catch {}
-  };
 
   useEffect(() => {
     const findNavigation = props?.content;
@@ -74,67 +40,32 @@ export default function PostLayout(props: PostLayoutProps) {
   }, [props.content]);
 
   return (
-    <>
-      <PostArticleLayout>
-        <Flex justifyContent="space-between" flexWrap="nowrap">
-          <div className="box" style={{ width: "50%" }}>
-            <div id="boxFixed">
-              <span>Navegação rápida</span>
-              <ul>
-                {fastNavigation?.map(lists => {
-                  return (
-                    <Link href={`#${lists.navId}`} key={lists.navId}>
-                      <li>{lists.navStr}</li>
-                    </Link>
-                  );
-                })}
-              </ul>
-            </div>
-          </div>
-
-          <div className="box">
-            <PostLayoutContent id="articleBody">
-              <PostLayoutTitle>
-                <small>{FormatDate(props.createdAt)}</small>
-                <h1>{props?.title}</h1>
-              </PostLayoutTitle>
-
-              <div dangerouslySetInnerHTML={{ __html: props?.content }} />
-            </PostLayoutContent>
-
-            <h6> Compartilhe </h6>
-            <Flex>
-              <ShareButton
-                onClick={() => {
-                  sharePublication("linkedin");
-                }}
-                color="white"
-                socialColor="#0A66C2"
-              >
-                <FaLinkedin size={24} />
-              </ShareButton>
-              <ShareButton
-                onClick={() => {
-                  sharePublication("twitter");
-                }}
-                color="white"
-                socialColor="#1D9BF0"
-              >
-                <FaTwitter size={24} />
-              </ShareButton>
-              <ShareButton
-                onClick={() => {
-                  sharePublication("");
-                }}
-                color="white"
-                socialColor="#4A5240"
-              >
-                <FaLink size={24} />
-              </ShareButton>
-            </Flex>
-          </div>
-        </Flex>
-      </PostArticleLayout>
-    </>
+    <Stack as="section">
+      <Flex justifyContent={"center"}>
+        <Box
+          width={"20%"}
+          position={"sticky"}
+          top="10%"
+          height={"500px"}
+          display={{ base: "none", md: "initial" }}
+        >
+          <Heading>Menu</Heading>
+          <List spacing={5}>
+            {fastNavigation?.map(lists => {
+              return (
+                <ListItem key={lists.navId}>
+                  <Link href={`#${lists.navId}`}>
+                    <li>{lists.navStr}</li>
+                  </Link>
+                </ListItem>
+              );
+            })}
+          </List>
+        </Box>
+        <Box width={{ base: "100%", md: "60%" }} id="section">
+          <div dangerouslySetInnerHTML={{ __html: props?.content }} />
+        </Box>
+      </Flex>
+    </Stack>
   );
 }

@@ -9,51 +9,27 @@ import { ServerStyleSheet } from "styled-components";
 
 export default class MyDocumment extends Document {
   static async getInitialProps(ctx: DocumentContext) {
-    const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
 
-    try {
-      ctx.renderPage = () =>
-        originalRenderPage({
-          enhanceApp: App => props =>
-            // eslint-disable-next-line react/jsx-props-no-spreading
-            sheet.collectStyles(<App {...props} />),
-        });
+    // Run the React rendering logic synchronously
+    ctx.renderPage = () =>
+      originalRenderPage({
+        // Useful for wrapping the whole react tree
+        enhanceApp: App => App,
+        // Useful for wrapping in a per-page basis
+        enhanceComponent: Component => Component,
+      });
 
-      const initialProps = await Document.getInitialProps(ctx);
-      return {
-        ...initialProps,
-        styles: (
-          <>
-            {initialProps.styles}
-            {sheet.getStyleElement()}
-          </>
-        ),
-      };
-    } finally {
-      sheet.seal();
-    }
+    // Run the parent `getInitialProps`, it now includes the custom `renderPage`
+    const initialProps = await Document.getInitialProps(ctx);
+
+    return initialProps;
   }
 
   render() {
     return (
       <Html lang="pt-BR">
-        <Head>
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"
-            rel="stylesheet"
-          />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Heebo:wght@200;400&display=swap"
-            rel="stylesheet"
-          />
-
-          <link
-            href="https://fonts.googleapis.com/css2?family=Lato&display=swap"
-            rel="stylesheet"
-          />
-        </Head>
+        <Head></Head>
         <body>
           <Main />
           <NextScript />

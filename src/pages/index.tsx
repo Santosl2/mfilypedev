@@ -1,25 +1,22 @@
-import { Footer } from "@/components/Footer";
-import { PostList } from "@/components/PostList";
+import { BannerHero, MyStacks } from "@/components";
+import { Post } from "@/components/PostList";
+import { PostInterface } from "@/interface/PostsInterface";
 import { SEO } from "@/SEO";
-import { Box, Container, Flex, Title } from "@/styles/components";
 import {
-  AboutMe,
-  LeftContent,
-  MyPicture,
-  RightContent,
-} from "@/styles/index.style";
-import Link from "next/link";
-import { Content } from "@/styles/components";
+  Box,
+  Container,
+  Divider,
+  Flex,
+  Heading,
+  Stack,
+} from "@chakra-ui/react";
+
+import { MdCheckCircle, MdSettings } from "react-icons/md";
+
+import { List, ListItem, ListIcon } from "@chakra-ui/react";
 
 import { getAllPosts } from "./api/posts";
-import { MyProjects } from "@/components/MyProjects";
-
-interface IPosts {
-  slug: string;
-  title: string;
-  description: string;
-  createdAt: string;
-}
+import { Animation } from "@/components";
 
 export default function Home({ posts }) {
   return (
@@ -28,61 +25,78 @@ export default function Home({ posts }) {
         title="Início"
         description="Site pessoal de um desenvolvedor FrontEnd"
       />
-
-      <Container>
-        <AboutMe data-aos="fade-up" data-aos-anchor-placement="center-bottom">
-          <LeftContent>
-            <h4>
-              Ei, eu sou o Matheus Filype, <br /> Desenvolvedor Front End
-            </h4>
-            <p>
-              Atualmente sou desenvolvedor Front End, na empresa{" "}
-              <Link href="http://gethash.com.br">
-                <a target={"_blank"} rel="noopener">
-                  Get Hash
-                </a>
-              </Link>
-              . Meu foco de estudo atual tem sido React (Next JS) + Typescript.
-            </p>
-            <p>
-              É aqui que escrevo meus pensamentos longos sobre desenvolvimento,
-              negócios e qualquer outra coisa que desperte meu interesse.
-            </p>
-          </LeftContent>
-          <RightContent>
-            <MyPicture
-              alt="Desenvolvedor FrontEnd React"
-              src="/images/mfilype.jpg"
-            />
-          </RightContent>
-        </AboutMe>
-      </Container>
-      <Box withBg>
-        <Content>
-          <Title>
-            <h5>Postagens recentes</h5>
-            <Link href="/posts">Veja todos</Link>
-          </Title>
-          <Flex>
-            {posts?.map((el: IPosts) => {
+      <BannerHero />
+      <Container maxW="container.xl">
+        <Heading>Publicações</Heading>
+        <Stack as="section">
+          <Flex flexDir={{ base: "column", md: "row" }}>
+            {posts?.map((el: PostInterface) => {
               return (
-                <PostList
+                <Post
                   key={el.slug}
                   slug={el.slug}
                   title={el.title}
                   createdAt={el.createdAt}
-                  background="background.jpg"
+                  background={el.background}
                   description={el.description}
+                  tags={el.tags}
                 />
               );
             })}{" "}
           </Flex>
-        </Content>
-      </Box>
+        </Stack>
 
-      <MyProjects />
+        <Divider margin={"2rem"} />
+        <Stack as="section">
+          <Heading>O que eu faço?</Heading>
+          <Flex
+            alignItems={"center"}
+            justifyContent={"center"}
+            flexDir={{ base: "column", md: "row" }}
+          >
+            <Box>
+              <Animation name={"coding2.json"} />
+            </Box>
+            <Box textAlign={"center"} marginBottom={"4rem"}>
+              <Flex
+                flexWrap={"wrap"}
+                alignItems={"center"}
+                justifyContent={"center"}
+                marginBottom={"2rem"}
+              >
+                <MyStacks url="./images/html5.svg" name="HTML 5" />
+                <MyStacks url="./images/css3.svg" name="CSS 3" />
+                <MyStacks url="./images/javascript.svg" name="Javascript" />
+                <MyStacks url="./images/typescript.svg" name="Typescript" />
+                <MyStacks url="./images/react.svg" name="React JS" />
+                <MyStacks url="./images/nextjs.svg" name="Next JS" />
+                <MyStacks url="./images/yarn.svg" name="Yarn " />
+                <MyStacks url="./images/git.svg" name="Git" />
+                <MyStacks url="./images/docker.svg" name="Docker" />
+              </Flex>
 
-      <Footer />
+              <List spacing={3}>
+                <ListItem>
+                  <ListIcon as={MdCheckCircle} color="blue.500" />
+                  Desenvolvo sites de alta performance e seguro
+                </ListItem>
+                <ListItem>
+                  <ListIcon as={MdCheckCircle} color="blue.500" />
+                  Sites com layout 100% responsivo
+                </ListItem>
+                <ListItem>
+                  <ListIcon as={MdCheckCircle} color="blue.500" />
+                  Sites com foco em SEO para ranqueamento no Google
+                </ListItem>
+                <ListItem>
+                  <ListIcon as={MdCheckCircle} color="blue.500" />
+                  Integração com serviços de terceiros
+                </ListItem>
+              </List>
+            </Box>
+          </Flex>
+        </Stack>
+      </Container>
     </>
   );
 }

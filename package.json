@@ -8,9 +8,13 @@
     "start": "next start"
   },
   "dependencies": {
-    "@types/aos": "^3.0.4",
-    "aos": "^2.3.4",
+    "@chakra-ui/icons": "^1.1.7",
+    "@chakra-ui/react": "^1.8.5",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "framer-motion": "4.1.17",
     "highlight.js": "^11.4.0",
+    "lottie-web": "^5.8.1",
     "next": "10.2.3",
     "polished": "^4.1.4",
     "react": "17.0.2",

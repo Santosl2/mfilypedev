@@ -1,7 +1,9 @@
 ---
 title: "Entendendo os re-renders e a memorização no React"
-description: "Aqui estão reunidas algumas dicas rápidas para aumentar o desempenho em seu aplicativo React, entendendo a re-renderização e a memorização."
+description: "Aqui estão reunidas algumas dicas rápidas para aumentar o desempenho em seu aplicativo React."
 created_at: 1643037464648
+tags: tutorial,react,next
+background: "https://i.imgur.com/KedUJuI.png"
 ---
 
 ## Quando o React re-renderiza novamente os componentes?

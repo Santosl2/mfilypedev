@@ -1,6 +1,7 @@
 import matter from "gray-matter";
 import { marked } from "marked";
 import hljs from "highlight.js";
+import { PostInterface } from "@/interface/PostsInterface";
 
 marked.setOptions({
   langPrefix: "hljs language-", // highlight.js css expects a top-level 'hljs' class.
@@ -8,13 +9,6 @@ marked.setOptions({
     return hljs.highlightAuto(code, ["typescript"]).value;
   },
 });
-
-interface IProps {
-  title: string;
-  description: string;
-  content: string;
-  createdAt: number;
-}
 
 interface IPostProps {
   limit?: number;
@@ -34,6 +28,8 @@ export async function getAllPosts({ limit }: IPostProps) {
       title: meta.data.title,
       description: meta.data.description,
       createdAt: meta.data.created_at,
+      background: meta.data.background,
+      tags: meta.data.tags,
     });
   }
 
@@ -44,7 +40,7 @@ export async function getAllPosts({ limit }: IPostProps) {
     .slice(0, limit);
 }
 
-export async function getPostBySlug(slug: string): Promise<IProps> {
+export async function getPostBySlug(slug: string): Promise<PostInterface> {
   const fileContent = await import(`../../_posts/${slug}.md`);
 
   if (fileContent) {
@@ -55,6 +51,8 @@ export async function getPostBySlug(slug: string): Promise<IProps> {
       title: meta.data.title,
       description: meta.data.description,
       createdAt: meta.data.created_at,
+      tags: meta.data.tags,
+      background: meta.data.background,
       content,
     };
   }
