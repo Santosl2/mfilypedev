@@ -1,7 +1,8 @@
 ---
 title: "Sobre mim"
-description: "Nessa publicação eu falo um pouco sobre como iniciei na programação"
+description: "Nessa publicação eu falo um pouco sobre mim e sobre como eu iniciei no mundo programação, e quais linguagens já tive contato."
 created_at: 1642723845747
+tags: sobre
 ---
 
 # Sobre mim
