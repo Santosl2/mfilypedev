@@ -66,10 +66,16 @@ export default function Home({ posts }) {
               >
                 <MyStacks url="./images/html5.svg" name="HTML 5" />
                 <MyStacks url="./images/css3.svg" name="CSS 3" />
+                <MyStacks url="./images/jquery.svg" name="jQuery" />
                 <MyStacks url="./images/javascript.svg" name="Javascript" />
                 <MyStacks url="./images/typescript.svg" name="Typescript" />
                 <MyStacks url="./images/react.svg" name="React JS" />
                 <MyStacks url="./images/nextjs.svg" name="Next JS" />
+                <MyStacks url="./images/php.svg" name="PHP" />
+                <MyStacks url="./images/postgresql.svg" name="PostgreSQL" />
+                <MyStacks url="./images/mysql.svg" name="MySQL" />
+
+                <MyStacks url="./images/sass.svg" name="Sass " />
                 <MyStacks url="./images/yarn.svg" name="Yarn " />
                 <MyStacks url="./images/git.svg" name="Git" />
                 <MyStacks url="./images/docker.svg" name="Docker" />
