@@ -28,6 +28,7 @@ export function PostHero({
       backgroundImage={`url("${background}")`}
       backgroundPosition={"center center"}
       backgroundSize={"cover"}
+      marginBottom={"1rem"}
     >
       <VStack
         position={"relative"}

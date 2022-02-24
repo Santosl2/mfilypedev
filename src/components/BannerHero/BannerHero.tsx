@@ -23,7 +23,12 @@ export function BannerHero({
   description?: string;
 }): JSX.Element {
   return (
-    <Flex w={"full"} minH={"80vh"} background={"gray.700"}>
+    <Flex
+      w={"full"}
+      minH={"80vh"}
+      background={"gray.700"}
+      marginBottom={"1rem"}
+    >
       <VStack
         position={"relative"}
         w={"full"}

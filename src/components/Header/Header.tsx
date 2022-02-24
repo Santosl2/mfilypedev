@@ -94,7 +94,11 @@ export function Header() {
               </NavLink>
             ))}
 
-            <Button background={"transparent"} onClick={toggleColorMode}>
+            <Button
+              background={"transparent"}
+              _hover={{ background: "gray.900" }}
+              onClick={toggleColorMode}
+            >
               {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
             </Button>
           </HStack>
