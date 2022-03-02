@@ -71,6 +71,7 @@ export default function Home({ posts }) {
                 <MyStacks url="./images/typescript.svg" name="Typescript" />
                 <MyStacks url="./images/react.svg" name="React JS" />
                 <MyStacks url="./images/nextjs.svg" name="Next JS" />
+                <MyStacks url="./images/nodejs.svg" name="Node JS" />
                 <MyStacks url="./images/php.svg" name="PHP" />
                 <MyStacks url="./images/postgresql.svg" name="PostgreSQL" />
                 <MyStacks url="./images/mysql.svg" name="MySQL" />
@@ -97,6 +98,10 @@ export default function Home({ posts }) {
                 <ListItem>
                   <ListIcon as={MdCheckCircle} color="blue.500" />
                   Integração com serviços de terceiros
+                </ListItem>
+                <ListItem>
+                  <ListIcon as={MdCheckCircle} color="blue.500" />
+                  Criação de API's com Node JS
                 </ListItem>
               </List>
             </Box>

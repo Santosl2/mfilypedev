@@ -48,9 +48,10 @@ export function BannerHero({
             maxW={550}
             fontSize={useBreakpointValue({ base: "sm", md: "md" })}
           >
-            Um desenvolvedor FrontEnd apaixonado com experiência na construção
-            de aplicativos web com JavaScript / TypeScript / React JS / Next JS.
-            Atualmente venho estudando Node JS para construção de API's.
+            Um desenvolvedor FullStack apaixonado com experiência na construção
+            de aplicativos web com JavaScript / TypeScript / React JS / Next JS
+            / Node JS e Express. Atualmente venho me especializando como
+            desenvolvedor Frontend.
           </Text>
           <Stack direction={"row"}>
             <Button
