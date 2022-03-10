@@ -63,7 +63,7 @@ export function Post({
             >
               {tags.split(",").map(tag => {
                 return (
-                  <Badge colorScheme="green" marginRight={2}>
+                  <Badge key={tag} colorScheme="green" marginRight={2}>
                     {tag}
                   </Badge>
                 );

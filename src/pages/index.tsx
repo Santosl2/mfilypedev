@@ -17,6 +17,9 @@ import { List, ListItem, ListIcon } from "@chakra-ui/react";
 
 import { getAllPosts } from "./api/posts";
 import { Animation } from "@/components";
+import { Projects } from "@/components/Projects";
+import { projects } from "@/mocks/Projects";
+import { ProjectsInterface } from "@/interface/ProjectsInterface";
 
 export default function Home({ posts }) {
   return (
@@ -105,6 +108,21 @@ export default function Home({ posts }) {
                 </ListItem>
               </List>
             </Box>
+          </Flex>
+        </Stack>
+        <Stack as="section">
+          <Flex flexDir={{ base: "column", md: "row" }} flexWrap={"wrap"}>
+            {projects?.map((el: ProjectsInterface) => {
+              return (
+                <Projects
+                  key={el.title}
+                  title={el.title}
+                  background={el.background}
+                  url={el.url}
+                  isOnline={el.isOnline}
+                />
+              );
+            })}{" "}
           </Flex>
         </Stack>
       </Container>
