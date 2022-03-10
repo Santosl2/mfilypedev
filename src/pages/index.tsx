@@ -110,6 +110,7 @@ export default function Home({ posts }) {
             </Box>
           </Flex>
         </Stack>
+        <Heading>Alguns projetos</Heading>
         <Stack as="section">
           <Flex flexDir={{ base: "column", md: "row" }} flexWrap={"wrap"}>
             {projects?.map((el: ProjectsInterface) => {
