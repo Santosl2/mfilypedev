@@ -5,7 +5,6 @@ import Document, {
   NextScript,
   DocumentContext,
 } from "next/document";
-import { ServerStyleSheet } from "styled-components";
 
 export default class MyDocumment extends Document {
   static async getInitialProps(ctx: DocumentContext) {
