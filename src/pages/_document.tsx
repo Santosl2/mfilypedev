@@ -28,7 +28,13 @@ export default class MyDocumment extends Document {
   render() {
     return (
       <Html lang="pt-BR">
-        <Head></Head>
+        <Head>
+          <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5562012919555753"
+            crossOrigin="anonymous"
+          ></script>
+        </Head>
         <body>
           <Main />
           <NextScript />
