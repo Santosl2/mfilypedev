@@ -18,7 +18,9 @@ export function SEO({
   const pageTitle = `${title} ${
     !shouldExcludeTitleSuffix ? ` |  ${process.env.SITE_NAME}` : ""
   }`;
-  const pageImage = image ? `${process.env.BASE_URL}/images/${image}` : null;
+  const pageImage = !image.includes("imgur")
+    ? `${process.env.BASE_URL}/images/${image}`
+    : image;
 
   return (
     <Head>
