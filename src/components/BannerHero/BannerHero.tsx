@@ -33,8 +33,9 @@ export function BannerHero({
         position={"relative"}
         w={"full"}
         justify={"center"}
-        flexDirection={useBreakpointValue({ base: "column", md: "row" })}
         px={useBreakpointValue({ base: 4, md: 8 })}
+        flexDir={{ base: "column", md: "row" }}
+        p={4}
         marginTop={{ base: "5rem", md: "initial" }}
       >
         <Stack maxW={"600px"} align={"flex-start"} spacing={6} marginRight={3}>
