@@ -13,7 +13,7 @@ export default function Home(post: PostInterface) {
 
   useEffect(() => {
     setIsLoading(false);
-  }, [post]);
+  }, [post.content]);
   return (
     <>
       <SEO
@@ -30,11 +30,11 @@ export default function Home(post: PostInterface) {
 
       <Container maxW="container.xl" marginTop={"5rem"}>
         <PostLayout
-          title={post.title}
-          description={post.description}
-          content={post.content}
-          createdAt={post.createdAt}
-          tags={post.tags}
+          title={post?.title}
+          description={post?.description}
+          content={post?.content}
+          createdAt={post?.createdAt}
+          tags={post?.tags}
         />
       </Container>
 
