@@ -25,12 +25,16 @@ cd mock-api
 
 E dentro dessa pasta iremos iniciar o nosso package.json e também instalaremos as bibliotecas necessárias com o comando:
 
+<br/>
+
 Yarn
 
 ```bash
 yarn init -y
 yarn add -D json-server faker-br
 ```
+
+<br/>
 
 NPM
 
@@ -47,7 +51,9 @@ Agora, iremos criar nosso arquivo _index.js_ e nosso arquivo _db.json_ com o com
 touch index.js db.json
 ```
 
-## Criado o algorítimo
+<br/>
+
+## Criando o algorítimo
 
 Agora, iremos criar o nosso algorítimo para gerar os dados fake. Neste meu caso, quero apenas nome, e-mail e senha, porém você pode adaptar de acordo com a sua necessidade.
 
@@ -67,6 +73,7 @@ var fakeDb = { users: [] };
 
 ```javascript
 for (let i = 1; i <= 500; i++) {
+  // no lugar 500 será a quantidade de registros que você quer gerar
   fakeDb.users.push({
     id: i,
     name: faker.name.firstName(),
@@ -108,6 +115,8 @@ Agora só acessarmos o `localhost:8000/users` e teremos todos os nossos registro
 
 ![Fake API Exemple date](https://imgur.com/JhtfWSd.png "Example Fake API")
 
+<br/>
+
 ## Paginação e filtro
 
 Para efetuar uma paginação, basta apenas colocar os query params` _limit` e `_page`
@@ -125,6 +134,8 @@ http://localhost:8000/users?id=3
 ```
 
 ![Json-server filter example](https://imgur.com/SwAIs68.png "Json-server filter example")
+
+<br/>
 
 ## Desfecho
 
