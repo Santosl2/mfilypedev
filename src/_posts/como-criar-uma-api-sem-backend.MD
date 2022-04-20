@@ -1,7 +1,7 @@
 ---
 title: "Como criar uma API sem Backend"
 description: "Aqui, eu tento dar uma pequena solução simples de como criar um Backend Fake para testar suas aplicações Frontend"
-created_at: 1642723845747
+created_at: 1650467282909
 tags: tutorial,react,node
 background: "https://i.imgur.com/lhAwkVW.png"
 ---
