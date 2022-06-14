@@ -61,8 +61,6 @@ export function Projects({
                 <Badge colorScheme={"red"}>Em desenvolvimento...</Badge>
               )}
             </Heading>
-
-            <Text color={"gray.500"}>{url}</Text>
           </Stack>
         </Box>
       </ScaleFade>
