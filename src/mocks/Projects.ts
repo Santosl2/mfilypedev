@@ -2,15 +2,21 @@ import { ProjectsInterface } from "@/interface/ProjectsInterface";
 
 export const projects: ProjectsInterface[] = [
   {
-    background: "/images/gostore.png",
-    title: "Go Store",
-    url: "https://www.gostoreipatinga.com.br/",
+    background: "/images/socialmedia.png",
+    title: "Rede social",
+    url: "https://social-media-frontend-ruddy.vercel.app/",
     isOnline: true,
   },
   {
-    background: "/images/capfinanceira.png",
-    title: "CAP Financeira",
-    url: "https://capfinanceira.com/",
+    background: "/images/ifinances.png",
+    title: "iFinances",
+    url: "https://social-media-frontend-ruddy.vercel.app/",
+    isOnline: true,
+  },
+  {
+    background: "/images/gostore.png",
+    title: "Go Store",
+    url: "https://www.gostoreipatinga.com.br/",
     isOnline: true,
   },
   {
@@ -26,9 +32,9 @@ export const projects: ProjectsInterface[] = [
     isOnline: true,
   },
   {
-    background: "/images/socialmedia.png",
-    title: "Rede social",
-    url: "https://bit.ly/3sXv9Jd",
-    isOnline: false,
+    background: "/images/capfinanceira.png",
+    title: "CAP Financeira",
+    url: "https://capfinanceira.com/",
+    isOnline: true,
   },
 ];
