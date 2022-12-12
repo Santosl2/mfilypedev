@@ -17,13 +17,13 @@ export function ListItem() {
       {LIST_ITEMS.map((item, index) => (
         <Link href={item.url} target={item.target ?? "_parent"}>
           <motion.li
-            className="text-2xl underline cursor-pointer underline-offset-2 mb-5"
+            className="text-2xl underline cursor-pointer underline-offset-2 mb-5 transition-all hover:text-white text-purple-400"
             variants={listItemVariants}
             animate="visible"
             initial="hidden"
             transition={{
-              duration: 0.7,
-              delay: index * 0.2,
+              duration: 0.1,
+              delay: index * 0.1,
             }}
             key={index}
           >

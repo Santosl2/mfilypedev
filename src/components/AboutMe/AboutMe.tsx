@@ -25,7 +25,7 @@ export function AboutMe() {
         <Title />
 
         <span className="leading-[3rem] text-purple-700">
-          Middle Front End developer
+          Middle Front End Developer
         </span>
 
         <p>

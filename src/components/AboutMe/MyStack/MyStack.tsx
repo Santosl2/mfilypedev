@@ -7,7 +7,7 @@ export function MyStack() {
     <div className="mt-24">
       <h3 className="text-theme-tertiary">Some of my knowledge</h3>
 
-      <motion.div className="flex gap-2 overflow-hidden">
+      <motion.div className="flex gap-2 overflow-hidden flex-wrap">
         {MY_STACKS.map((stack, index) => (
           <motion.img
             key={stack.name}
@@ -22,7 +22,6 @@ export function MyStack() {
             transition={{
               ease: [0.455, 0.03, 0.515, 0.955],
               duration: 0.7,
-
               delay: index * 0.1,
             }}
           />

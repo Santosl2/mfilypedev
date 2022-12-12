@@ -5,7 +5,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <body className="bg-theme-secondary text-white">
       <Header />
-      <main>{children}</main>
+      <main className="max-w-5xl m-auto grid place-items-center h-screen">
+        {children}
+      </main>
     </body>
   );
 }

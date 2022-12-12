@@ -9,3 +9,7 @@ h2 {
 h3 {
   @apply text-3xl mb-5;
 }
+
+a {
+  @apply underline text-purple-700 font-semibold;
+}
