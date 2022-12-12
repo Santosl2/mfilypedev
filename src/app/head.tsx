@@ -1,3 +1,4 @@
+// @ts-nocheck
 export default function Head() {
   return (
     <html lang="pt-BR">
