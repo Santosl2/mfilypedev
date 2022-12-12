@@ -9,9 +9,8 @@ Neste projeto eu utilizo:
 - React JS
 - Next JS
 - Typescript
-- Chakra UI
-- Lottie (para animações)
-- React Icons
+- Tailwind CSS
+- Framer Motion (para animações)
 - SCSS
 - HTML
 
