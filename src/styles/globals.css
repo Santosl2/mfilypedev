@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h2 {
+  @apply text-4xl mb-5;
+}
+
+h3 {
+  @apply text-3xl mb-5;
+}
+
+a {
+  @apply underline text-purple-700 font-semibold;
+}
