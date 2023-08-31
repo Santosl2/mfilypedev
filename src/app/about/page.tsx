@@ -41,7 +41,7 @@ export default function AboutPage() {
           </p>
           <p>
             And you can see my resume in this{" "}
-            <Link href="/resume/curriculo.pdf" target="_blank">
+            <Link href="https://www.linkedin.com/in/mfilype/" target="_blank">
               link
             </Link>{" "}
           </p>

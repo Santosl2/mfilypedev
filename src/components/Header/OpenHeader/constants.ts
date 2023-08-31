@@ -9,7 +9,7 @@ export const LIST_ITEMS = [
   },
   {
     title: "Resume",
-    url: "/resume/curriculo.pdf",
+    url: "https://www.linkedin.com/in/mfilype/",
     target: "_blank",
   },
 ];
